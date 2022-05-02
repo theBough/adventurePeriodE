@@ -20,6 +20,14 @@ function Player(x, y, w, h){
       //this is the right arrow key
       this.x += 5;
     }//end if
+     if(keyIsDown(38)){
+      //this is the up arrow key
+      this.y -= 5;
+    }//end if
+    if(keyIsDown(40)){
+      //this is the down arrow key
+      this.y += 5;
+    }//end if
     
   }
 }//end Player
