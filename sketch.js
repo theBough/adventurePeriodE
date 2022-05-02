@@ -1,11 +1,11 @@
 let p;
 function setup() {
   createCanvas(400, 400);
-  p = new Player(50,50,20,20);
+  p = new Player(50,50,20,20, "#8c1aff");
 }
 
 function draw() {
-  background(220);
+  background("#ffff4d");
   p.display()
   p.update()
   screenChange();
