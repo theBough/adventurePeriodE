@@ -19,4 +19,19 @@ function screenChange(){
     //so place the player on the right
     p.x = width - p.w
   }
+  if(p.x > width){
+    //off the canvas tothe right
+    //so place the player on the left
+    p.x = 0
+  }
+  if(p.y < 0){
+    //off the canvas tothe top
+    //so place the player on the bottom
+    p.y = height - p.h
+  }
+  if(p.y > height){
+    //off the canvas tothe bottom
+    //so place the player on the top
+    p.y = 0
+  }
 }//end screen change
