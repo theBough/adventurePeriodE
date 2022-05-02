@@ -20,7 +20,13 @@ function draw() {
 }//end draw
 function roomOne(){
   w=[];
+  //Top wall
   w.push(new Wall(0,0,width,20,"#66ccff"))
+  //wall in the middle
+  w.push(new Wall(0,200,175,20,"#ff66a3"))
+  //green wall going downward
+  w.push(new Wall(300,200,20,200,"#ccff66"))
+ 
 }
 
 function screenChange(){
