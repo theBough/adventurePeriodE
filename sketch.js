@@ -1,4 +1,5 @@
 let p;
+let w = []
 function setup() {
   createCanvas(400, 400);
   p = new Player(50,50,20,20, "#8c1aff");
@@ -8,7 +9,18 @@ function draw() {
   background("#ffff4d");
   p.display()
   p.update()
+  for(i=0 ; i<w.length ; i++){
+    //this will loop however many walls
+    //there are in this room
+    w[i].display()
+    
+  }//end loop
   screenChange();
+  roomOne()
+}//end draw
+function roomOne(){
+  w=[];
+  w.push(new Wall(0,0,width,20,"#66ccff"))
 }
 
 function screenChange(){
