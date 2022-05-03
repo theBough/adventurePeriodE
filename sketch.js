@@ -1,10 +1,13 @@
 let p;
 let w = []
+let activeX, activeY;
 function setup() {
   createCanvas(400, 400);
   p = new Player(50,50,20,20, "#8c1aff");
+  activeX = 0;
+  activeY = 0;
+  fillRooms();
 }
-
 function draw() {
   background("#ffff4d");
   p.display()
@@ -16,20 +19,10 @@ function draw() {
     
   }//end loop
   screenChange();
-  roomOne()
+  
+  rooms[activeX][activeY].call()
   checkForCollision()
 }//end draw
-function roomOne(){
-  w=[];
-  //Top wall
-  w.push(new Wall(0,0,width,20,"#66ccff"))
-  //wall in the middle
-  w.push(new Wall(0,200,175,20,"#ff66a3"))
-  //green wall going downward
-  w.push(new Wall(300,200,20,200,"#ccff66"))
- 
-}
-
 function screenChange(){
   /*this function is checking to see if the player has gone off
   the canvas*/
