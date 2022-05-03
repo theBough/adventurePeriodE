@@ -17,6 +17,7 @@ function draw() {
   }//end loop
   screenChange();
   roomOne()
+  checkForCollision()
 }//end draw
 function roomOne(){
   w=[];
