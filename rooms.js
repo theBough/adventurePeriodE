@@ -4,8 +4,7 @@ function fillRooms(){
   [roomOne, roomTwo]
 ]
 }
-/* Don't copy this stuff because you will lose your walls
-*/
+
 var roomOne = function(){
   w=[];
   //Top wall
