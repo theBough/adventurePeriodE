@@ -1,5 +1,22 @@
-  this.keyCollision = function () {
-    //check if we hit the left of any wall
+function Key(x,y,w,h,r, path){
+  this.x = x;
+  this.y = y;
+  this.w  = w;
+  this.h = h;
+  this.r = r;
+  this.img = loadImage(path);
+  this.have = false;
+  
+  this.display = function(){
+    if(this.r == rooms[activeY][activeX]){
+      //resize the key image
+      this.img.resize(this.w, this.h);
+      image(this.img, this.x, this.y)
+      
+    }//end if
+  }//end display
+ this.keyCollision = function () {
+    //check if we hit the left of any key
     if (
       p.y <= this.y + this.h &&
       p.y + p.h >= this.y &&
@@ -10,7 +27,7 @@
       this.have = true;
     }
 
-    //check if we hit the right of any wall
+    //check if we hit the right of any key
     if (
       p.y <= this.y + this.h &&
       p.y + p.h >= this.y &&
@@ -31,7 +48,7 @@
       this.have = true;
     }
 
-    //check if we hit the top of any wall
+    //check if we hit the top of any key
     if (
       p.x <= this.x + this.w &&
       p.x + p.w >= this.x &&
@@ -42,16 +59,8 @@
       this.have = true;
     }
      //Check if the key hits a gate.
-   if (
-     w[0].y <= this.y + this.h &&
-      w[0].y + w[0].h >= this.y &&
-      w[0].x + w[0].w >= this.x &&
-      w[0].x <= this.x + this.w
-    ) {
-      gateOneClosed = false;
-     //k.show = false;
-      //if it hits the gate, redraw Room 1
-      
-    }
+  
     
   };
+  
+}
