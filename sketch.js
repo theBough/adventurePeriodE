@@ -1,17 +1,22 @@
 let p;
 let w = []
+let k;
 let activeX, activeY;
 function setup() {
   createCanvas(400, 400);
   p = new Player(50,50,20,20, "#8c1aff");
+  
   activeX = 0;
   activeY = 0;
   fillRooms();
+   k = new Key(200,100,20,15,roomOne,"key.png");
 }
 function draw() {
-  background("#ffff4d");
+  background("black");
   p.display()
-  p.update()
+  p.update();
+  k.display()
+  k.keyCollision();
   for(i=0 ; i<w.length ; i++){
     //this will loop however many walls
     //there are in this room
