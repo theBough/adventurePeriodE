@@ -17,6 +17,7 @@ function draw() {
   p.update();
   k.display()
   k.keyCollision();
+  k.update();
   for(i=0 ; i<w.length ; i++){
     //this will loop however many walls
     //there are in this room
