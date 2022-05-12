@@ -31,7 +31,7 @@ function draw() {
     
   }//end loop
   screenChange();
-  console.log(rooms[activeY][activeX])
+  //console.log(rooms[activeY][activeX])
   rooms[activeY][activeX].call()
   checkForCollision()
 }//end draw
