@@ -3,14 +3,16 @@ let w = []
 let k;
 let activeX, activeY;
 let g;
+let m;
 function setup() {
   createCanvas(400, 400);
   p = new Player(50,50,20,20, "#8c1aff");
-  g = new Gate(250,50,20,80,roomOne,"white");
+  g = new Gate(250,50,20,80,roomTwo,"white");
   activeX = 0;
   activeY = 0;
   fillRooms();
    k = new Key(200,100,20,15,roomOne,"key.png");
+  m = new Mob(10,300,20,20,roomOne,"fireball.png");
 }
 function draw() {
   background("black");
@@ -21,6 +23,7 @@ function draw() {
   k.update();
   g.display();
   g.gateCollision();
+  m.display();
   for(i=0 ; i<w.length ; i++){
     //this will loop however many walls
     //there are in this room
@@ -28,6 +31,7 @@ function draw() {
     
   }//end loop
   screenChange();
+  console.log(rooms[activeY][activeX])
   rooms[activeY][activeX].call()
   checkForCollision()
 }//end draw
