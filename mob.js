@@ -6,11 +6,14 @@ function Mob(x, y, w, h, r, img) {
   this.img = loadImage(img);
 
   this.display = function () {
+    
     if (rooms[activeY][activeX] == this.r) {
+      console.log("test")
+      this.img.resize(this.w, this.h)
       image(this.img, this.x, this.y);
     } //end if
   };
-  this.upDate = function () {
+  this.update = function () {
     
   }; //end upDate
   this.mobCollision = function () {
