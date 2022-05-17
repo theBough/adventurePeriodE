@@ -5,8 +5,8 @@ function Mob(x, y, w, h, r, img) {
   this.w = w;
   this.r = r
   this.img = loadImage(img);
-  this.xSpeed = 3;
-  this.ySpeed = 3;
+  this.xSpeed = 1;
+  this.ySpeed = 1;
 
   this.display = function () {
     
@@ -22,7 +22,8 @@ function Mob(x, y, w, h, r, img) {
     }else{
       //the mob is on the right of the player
       this.x += this.xSpeed;
-    }    
+    }  
+    if(this.y > p.y){ this.y -= this.ySpeed}else{this.y +=this.ySpeed}
   }
 
   
